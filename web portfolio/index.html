@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JARSS</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Font awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars" id="btn"></i>
+                <i class="fa-solid fa-x" id="cls-btn"></i>
+            </label>
+            <a href="#" class="logo">FAJARR-</a>
+            <div class="navigasi">
+                <div class="nav-list">
+                    <a class="active" href="#">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                    <!-- <a href="#project">Project</a> -->
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+        <div id="content">
+            <article id="home" class="home">
+                <div class="image-home">
+                    <img src="./assets/img/illustration.svg" alt="">
+                </div>
+                <div class="home-text">
+                    <h1>Fajar Ramadhan</h1>
+                    <h2>Junior Front End Developer</h2>
+                    <p>Hi everyone👋, welcome to my website</p>
+                </div>
+            </article>
+            <!-- <aside>
+                <article id="profile" >
+                    <div class="aside-content">
+                        <h1>PROFILE</h1>
+                        <img src="./assets/img/Fajar-img.jpg" alt="Fajar IMG">
+                        <h3>Fajar Ramadhan</h3>
+                        <figcaption>Usia : 16 Tahun </figcaption>
+                        <figcaption>Asal : Bekasi</figcaption>
+                        <figcaption>Status : Pelajar</figcaption>
+                    </div>
+                </article>
+            </aside> -->
+            <!-- ASIDE -->
+            <aside class="card-aside">
+                <div class="aside-card">
+                    <h1>PROFILE
+                        <i class="fa-solid fa-user"></i>
+                    </h1>
+                    <img src="./assets/img/image1.png" alt="">
+                    <h2>Fajarr-</h2>
+                    <div class="aside-text">
+                        <p>Nama : Fajar Ramadhan</p>
+                        <p>Usia : 16th</p>
+                        <p>Asal : Bekasi, JawaBarat</p>
+                        <p>Status : Pelajar</p>
+                    </div>
+                </div>
+            </aside>
+            <!-- akhir aside -->
+
+            <!-- ABOUT -->
+            <article id="about" class="about">
+                <div class="about-title">
+                <h1 class="heading">About Me</h1>
+                <div class="about-content">
+                <p>Hi everyone, my name is Fajar Ramadhan. I'm 16 years old and i a student who is still in grade 11 SMK, I live in Bekasi, Indonesia. I know coding since I was in 2nd grade of junior high school but I started learning when I was in 10th grade of SMK.
+                    Actually I wanted to become a Pentester but because I think it is difficult to learn it I changed my desire and now I am studying Front End Developer</p>
+                    <br>
+                <p>I am self-taught and only use free learning resources such as from youtube, google and including this IDCamp Dicoding. In my opinion Coding is something that I like and have fun (even if it's an error hahaha). </p>
+                </div>
+            </article>
+            <!-- AKHIR ABOUT -->
+
+            <!-- CONTACT -->
+            <article>
+                <div class="contact-container" id="contact">
+                    <div class="title-contact">
+                    <h1 class="heading">Contact</h1>
+                    </div>
+                    <form action="" class="contact-form" id="contact-form">
+                        <input type="text" placeholder="Nama" class="nama" required>
+                        <input type="email" name="" id="" placeholder="Email" class="email" required>
+                        <textarea name="" id="" cols="30" rows="10" placeholder="Tulis Pesan Disini..." class="pesan"></textarea>
+                        <input type="submit" value="Send" class="send-btn">
+                    </form>
+                </div>
+            </article>
+            <!-- AKHIR CONTACT -->
+            </div>
+        </div>
+    </main>
+        <!-- AKHIR MAIN -->
+
+    <!-- FOOTER -->
+    <footer>
+        <h1>Find Me On</h1>
+        <div class="social">
+            <a href="https://instagram.com/fajar.ramdhnn"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://github.com/fajarramadhann"><i class="fa-brands fa-github"></i></a>
+            <a href="https://twitter.com/log1cc_"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/fajarramadhann/"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <p class="copyright">&copy; Fajarr-</p>
+    </footer>
+    <!-- AKHIR FOOTER -->
+
+    <!-- SMOOTH SCROOLSPY -->
+    <script>
+
+        let scroll = document.querySelectorAll('article');
+        let navLink = document.querySelectorAll('header nav a');
+
+        window.onscroll = () => {
+            scroll.forEach(sec => {
+
+                let top = window.scrollY;
+                let offset = sec.offsetTop;
+                let height = sec.offsetHeight;
+                let id = sec.getAttribute('id');
+
+                if(top >= offset && top < offset + height){
+                    navLink.forEach(link => {
+                        link.classList.remove('active');
+                        document.querySelector('header nav a[href*=' + id +']').classList.add('active');
+                    });
+                };
+
+            });
+        };
+
+    </script>
+</body>
+</html>
